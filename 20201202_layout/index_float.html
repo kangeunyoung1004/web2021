@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>float</title>
+	<style>
+		*{margin: 0;padding:0;} 
+		div.b{
+			background-color: skyblue;
+			width: 300px;
+			float:left;
+			/*margin:10px;*/
+			margin-right: 10px;
+			padding: 20px;
+			text-align: justify;
+		}
+		div.box{
+			background-color: skyblue;
+			width: 500px; height: 100px;
+			/*margin-right: auto;
+			margin:left auto;*/
+			margin: 0 auto;
+		}
+		div.box>div.box1
+		{float: left;width: 200px;
+			background-color: orange;
+		}
+
+		div.box>div.box2{
+			float: right;width: 200px;	
+			background-color: green;
+		}
+		.clearfix:after{content: "";display: block;clear:both;}
+		</style>
+	</head>
+	<body>
+		<div class="b">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla pariatur voluptas ullam eos reiciendis veritatis repudiandae earum assumenda, ducimus suscipit temporibus quae molestiae dolores modi harum sit illo est non.</div>
+		Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nulla pariatur voluptas ullam eos reiciendis veritatis repudiandae earum assumenda, ducimus suscipit temporibus quae molestiae dolores modi harum sit illo est non.
+		<img src="../images/testimg.jpg" alt="">
+		<hr>
+		<div class="box clearfix">
+	 	<div class="box1">Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Iusto aspernatur, ut explicabo perspiciatis quia ipsam reiciendis tenetur quisquam, velit eius aliquam dolore voluptatum assumenda, sed temporibus officia sapiente repudiandae recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Iusto aspernatur, ut explicabo perspiciatis quia ipsam reiciendis tenetur quisquam, velit eius aliquam dolore voluptatum assumenda, sed temporibus officia sapiente repudiandae recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Iusto aspernatur, ut explicabo perspiciatis quia ipsam reiciendis tenetur quisquam, velit eius aliquam dolore voluptatum assumenda, sed temporibus officia sapiente repudiandae recusandae!Lorem, ipsum dolor sit amet consectetur adipisicing, elit. Iusto aspernatur, ut explicabo perspiciatis quia ipsam reiciendis tenetur quisquam, velit eius aliquam dolore voluptatum assumenda, sed temporibus officia sapiente repudiandae recusandae!</div>
+	 <div class="bo1x2">Perferendis accusantium odio blanditiis voluptatibus, illum. Modi tenetur magnam doloribus, dolorum est vel, laudantium possimus sunt eius architecto fugit dolor maxime consectetur voluptates quibusdam expedita in. Repudiandae atque rerum dignissimos.</div>
+	 <!-- <div class="box3">Voluptatem esse numquam, temporibus quo doloribus aliquam laborum, at quod unde quae magnam magni aliquid delectus suscipit accusamus quisquam, porro est quam hic eos cum fugit deleniti saepe tempore. Aliquam.</div> -->
+	</div>
+
+	Lorem ipsum dolor, sit amet consectetur adipisicing elit. Beatae consequuntur, labore, blanditiis ad facere sequi eius. Ullam earum doloribus, fugit excepturi, ipsa aliquam. Sed quasi numquam consectetur ullam nostrum rerum?
+	<style>	
+		div.box10:before{content: "안녕하세요"}
+		div.box10:after{
+			content"만나서반갑습니다.";}
+			display:block;
+			clear:both;
+		}
+
+	</style>
+	<div class="box10">
+		Lorem ipsum dolor sit amet consectetur, adipisicing elit. Error, iste? Dolor fuga natus voluptas veniam saepe labore. Maiores quis laborum, illum, aut dolore, accusamus quod possimus molestiae natus sint placeat.
+	</div>
+	<div style="height: 1000px"></div>
+
+</body>
+</html>
