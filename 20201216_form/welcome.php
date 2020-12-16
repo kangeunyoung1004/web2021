@@ -15,7 +15,7 @@
 		이름:<?echo $na; ?>
 	</p>
 	<p>
-		이메일:<?echo $email ?>;
+		이메일:<?echo $email ?>
 	</p>
 </body>
 </html>
