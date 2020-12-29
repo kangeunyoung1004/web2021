@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>selector</title>
+	<style>
+		div{background: skyblue;
+			border :1px solid #000;
+			margin-bottom: 5px;}
+
+			div.box + div.box{background: red;}
+			/*선택자 다음의 전체를 선택*/
+			div.box ~ div.box1{background: blue;}
+	</style>
+</head>
+<body>
+	<div class="box">Lorem.</div>
+	<div class="box1">Omnis.</div>
+	<div class="box1">Vel.</div>
+	<div class="box">Pariatur.</div>
+	<div class="box">Tempora.</div>
+	<div class="box">Voluptas!</div>
+	<div class="box">Maiores!</div>
+	<div class="box">Nulla.</div>
+	<div class="box">Dolorem!</div>
+	<div class="box">Repellendus.</div>
+</body>
+</html>
