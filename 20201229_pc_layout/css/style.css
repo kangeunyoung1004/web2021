@@ -28,7 +28,6 @@ header#main_header{
 
 /*content*/
 #content{width: 960px;margin: 0 auto;}
-
 #main_section{width: 750px;float: left; }
 #main_section>.main_article{padding: 20px;border: 1px solid #000;margin-bottom:10px;}
 #main_aside{width: 200px;float: right;}
