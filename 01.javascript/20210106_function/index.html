@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>function</title>
+</head>
+<body>
+	<a href="#">링크</a> <a href="#">연습</a>
+
+	<div id="k">top</div>
+	Lorem ipsum dolor sit, amet consectetur adipisicing elit. Adipisci, quasi harum dolorem? Optio, accusamus voluptates vitae. Nesciunt maiores ullam recusandae impedit! Neque illo id hic corporis, perferendis voluptate deserunt mollitia excepturi totam suscipit temporibus natus voluptatem nisi nam inventore itaque reprehenderit ipsa velit ab dignissimos amet eligendi aspernatur dolorum earum! Error sequi laudantium veniam, consequatur eligendi tempore voluptas libero harum similique aspernatur. Neque officiis possimus excepturi libero doloribus inventore quod animi necessitatibus natus dolorem harum ratione magnam illo tempora esse pariatur nam, explicabo nostrum dicta ipsum aperiam. Aperiam alias quaerat repudiandae ducimus maxime cupiditate, a pariatur voluptatem, vel rerum doloremque.
+	<div id="#">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates fugit corrupti commodi facere eveniet quia, itaque earum, optio sit, cupiditate vero laudantium ea cum magnam obcaecati culpa similique deleniti quos!</div>
+	<div id="kang"></div>
+	<script>
+		function k(){
+
+			alert("안녕하세요");
+			return false;
+
+		}
+	</script>
+
+	<div style="height: 1000px">
+	<a href="#top">위로</a>
+	<a href="k" onclick="return false">
+	연습</a>
+	<!-- <a href="javascript:void(0)">연습</a> -->
+	<a href="#" onclick="return false">연습</a>
+	</div>
+	
+	<script>
+		function printMsg(name,age){
+			// document.write("학생이름 :" + name + "<br>");
+			// document.write("나이 :" + age + "살<br>");
+			document.getElementById("sname").innerHTML = "학생이름 : "+ name + "나이 : " + age + "살";
+			// $("#sName").html("학생이름 : "+ name + ",나이 : " + age + "살");
+		}
+		// printMsg("강은영",35);
+
+	
+	</script>
+	<div id="sName"></div>
+	<button type="button" onclick="printMsg('강은영',35)">학생정보
+	<button type="button" onclick="printMsg('김철수',25">학생정보1</button>
+	</button>
+	<br>
+
+	<div id="kang"></div>
+	<script>
+		var result;
+		function add(name,n){
+			document.write("<br>"+name+ "학생이 1부 "+n+"까지 덧셈 수행<br>");
+			var sum =0;
+			for(var i=1; i<=n;i++){
+				// document.write(i);
+				sum = sum + i; //sum += i;
+				// document.write(sum);
+				return sum;
+			}
+		}
+
+		result = add("강은영",10);
+		document.write("결과 :" + result +"<br>");
+		document.getElementById("kang").innerHTML = result;
+		result = add("이영희",100);
+		document.write("결과 :" + result +"<br>");
+		document.getElementById("kang").innerHTML = result;
+	</script>
+
+</body>
+</html

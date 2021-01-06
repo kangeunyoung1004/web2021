@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+.topNav{background-color: skyblue;}
+.topNav a{display: block; color:white;float:left;padding:15px 16px;}
+.topNav a.toggle{float: right;display: none;}
+
+@media screen and (max-width:575px){
+
+	.menuWrap{
+		position:fixed;width: 100%;
+	}
+.topNav a{display:none;}
+.topNav a:first-child{display:block;}
+.topNav a.toggle{display: block;}
+
+.topNav.kk a{float:none;display: block;}
+.topNav.kk a.toggle{position: absolute;right: 0;top:0;}
+}
+@media screen and (min-width: 576px) and (max-width: 991px){
+	.menuWrap{width:100%;}}
+@media screen and (min-width:992px){
+	.menuWrap{
+		width: 1200px;
+		position: fixed;
+		top:10px;left: 50%;
+		transform:translateX(-50%);
+	}
+}
