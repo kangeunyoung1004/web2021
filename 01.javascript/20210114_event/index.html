@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>event</title>
+</head>
+<body onclick="mouse(event)">
+	<h2 style="background-color:skyblue">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit. At sequi obcaecati ducimus aut itaque sapiente, dolor, minus fugit quasi illo et! Ipsum a quos tempora deleniti sint dolor totam neque.
+	</h2 >
+	<p id="event"></p>
+	<script>
+		function mouse(e){
+			var x =e.clickX;
+			var y =e.clientY;
+			console.log("X 값  "+ x +", Y 값 : " +y);
+			var print ="X값"
+			document.getElementById("event").innerHTML = print;
+		}
+	</script>
+</body>
+</html>
