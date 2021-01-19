@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tabmenu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jquery-3.1.1.min.js"></script>
+	<style>
+		.tabwrap{width: 1000px; margin:0 auto;}
+		.tab li{float: left;width: 20px;text-align:center;line-height: 40px;}
+		.tab. li.active{background: skyblue;}
+		.boxWrap{border:1px solid #000;padding: 20px;}
+	</style>
+	<script>
+		$(document).ready(function(){
+			$(".boxWrap>div").eq(0).fadeIn();
+
+			$(".tabWrap>ul>li").click(function(){
+			  var num = $(this).index();
+			  console.log(num);
+
+			  $(".tabWrap>li>").removeClass();	
+			  $(this).addClass("active");
+
+			  $(".boxWrap>div").hide();
+			  $(".boxWrap>div")eq(num).faideIn();
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<div class="tabWrap">
+		<ul class="tab clearfix">
+			<li cass="active">menu1</li>
+			<li>menu2</li>
+			<li>menu3</li>
+			<li>menu4</li>
+			<li>menu5</li>
+		</ul>
+		<div class="boxWrap">
+			<div>1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas aliquam, voluptas officia quos. Accusantium, ipsa, animi. Enim odit, qui sit totam unde eveniet necessitatibus tenetur officiis, cumque nobis expedita voluptas?</div>
+			<div>2. Sit rerum aspernatur minima est earum exercitationem corrupti corporis debitis sint porro laudantium odit quidem ad, eligendi cumque culpa dolorum nam animi cupiditate vero enim ex consequuntur consectetur impedit, inventore.</div>
+			<div>3. Quam accusamus fuga labore magni aspernatur modi fugit eos, nesciunt quod recusandae illum assumenda corporis voluptas minus fugiat repellendus nobis suscipit ipsum error quae alias. Debitis, numquam iste deserunt eius.</div>
+			<div>4. Itaque nisi accusantium optio, fugit reprehenderit omnis quisquam, asperiores nam laudantium corporis dolores voluptatum, voluptates. Neque esse, delectus consequatur cum aperiam blanditiis doloremque a eaque, expedita hic numquam, aspernatur ad.</div>
+			<div>5. Autem cumque officiis esse doloribus nisi reprehenderit reiciendis voluptate quo obcaecati eum facere ea optio quod, culpa soluta eveniet perferendis corrupti impedit laudantium ut, vel. Est dolore, doloribus quisquam fugiat!</div>
+		</div>
+	</div>
+</body>
+</html>
