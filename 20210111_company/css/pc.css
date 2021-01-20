@@ -1,4 +1,5 @@
 @charset "utf-8";
+body{min-width: 1260px}
 header#main_header{height:1950px;position: relative;margin-bottom:100px;}
 
 /*header top*/
@@ -133,7 +134,7 @@ header#main_header{height:1950px;position: relative;margin-bottom:100px;}
 /*continer*/
 .container{
 	height: 750px;
-	background:#aaa url(./images/contentsbg01.jpg) no-repeat center fixed;
+	background:#aaa url(../images/contentsbg01.jpg) no-repeat center fixed;
 	background-size:cover;color:white;padding-top:70px;
 }
 .container .section{width: 1260px;margin: 0 auto;}

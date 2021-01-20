@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>tabmenu</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jpuery-3.1.1.min.js"></script>
+	<script>
+		var viewImg = [
+		"../images/spring.jpg",
+		"../images/summer.jpg",
+		"../images/fall.jpg",
+		"../images/winter.jpg"];
+	$(document).ready(function(){
+		$(".wrapper li").click(function(){
+			var num = $(this).index();
+			colsole.log(num);
+			$(".imge img").attr("src",viewImg[num]);
+
+		})
+	});
+	</script>
+	<style>
+		.wrapper{width: 522px;margin: 0 auto;}
+		img{display: block;}
+		.wrapper li{float: left;width: 123px;margin-right:10px;}
+	</style>
+</head>
+<body>
+	<div class="wrapper">
+		<ul>
+			<li><img src="../images/btn1_1.jpg" alt="봄"></li>
+			<li><img src="../images/bt21_1.jpg" alt="봄"></li>
+			<li><img src="../images/btn3_1.jpg" alt="봄"></li>
+			<li><img src="../images/btn4_1.jpg" alt="봄"></li>
+		</ul>
+
+	</div>
+</body>
+</html>
