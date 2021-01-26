@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>car</title>
+	<link rel="stylesheet" href="../css/reset.css">
+	<script src="../js/jpuery-3.1.1.min.js"></script>
+	<style>
+		#panel{
+    width: 600px;height: 300px;
+    border: 1px solid #000;
+    margin: 0 auto;
+    position: relative;
+  }
+  .bar{
+    width: 500px;height: 20px;
+    background: #f00;
+    position: absolute;left: 50px;top: 190px;
+  }
+  .car{position: absolute;left: 50px;top: 120px;}
+
+	</style>
+	<script>
+		$(function(){
+		var bar = $(".bar");//막대 DOM
+		var car = $(".car"); //자동차 DOM
+		var nStart = bar.position().left;//출발
+		var nEnd = nStart; //자동차의 현재위치
+		var nStep = 2;
+
+		function carMove(){
+			nCurrent = nCurrent + nStep;
+			console.log(nCurrent);
+			car.css("left",nCurrent);
+		}
+		setinterval(carMove,30) //1000-1
+		});
+	</script>
+</head>
+<body>
+	<div id="panel">
+	<div class="bar"></div>
+	<div class="car"><img src="" alt=""></div>
+	</div>
+	<button class="btn_start">시작</button>
+</body>
+</html>
