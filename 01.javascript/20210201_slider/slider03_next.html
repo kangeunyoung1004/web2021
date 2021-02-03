@@ -71,7 +71,11 @@
 			current = i;
 			}
 		}
-		function prevSlide(){}
+		function prevSlide.eq(){
+			i = currentEl = banner.eq(i);
+
+			currentEl.css({left:0}).stop().animate(left:);
+		}
 
 		$(".next").click(function(){
 			nextSlide();
