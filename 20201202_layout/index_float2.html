@@ -3,49 +3,55 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>float2</title>
-	<style>
+	<title>Document</title>
 
-		/*reset*/
+	<style>
 		*{margin: 0;padding: 0;}
 		a:link,a:visited{
-			color: #000;text-decoration: none;
+			color: #000;
+			text-decoration: none;
 		}
-		li{list-style:none;}
+		li{list-style: none}
 		.clearfix:after{
 			content:"";
 			display: block;
 			clear: both;
 		}
 
-		/*navigation*/
-		div.nav{
-			width:500px;
+		div.box{
+			width: 500px;
 			background-color:skyblue;
-			margin: 0 auto;
+			margin:0 auto;
 		}
-		div.nav>ul{}
-		div.nav>ul>li{float: left;
-			width: 100px;height: 40px;
-			text-align:center;
-			line-height: 40px;
-			cursor: pointer
+		div.box>div.box1{
+			width: 100px;height: 50px;
+			float: left;
+			background-color:orange;
+			line-height: 50px;
 		}
-		div.nav>ul>li:hover{
-			background-color: #ccc;
+		div.box>div.box2{
+			width: 100px;height: 50px;
+			float: right;
+			background-color:green;
+			text-align: right;
+			line-height:50px;
 		}
+		/*div.box>div.clear{clear:both;}*/
+
+		/*div.box:after{
+			content:"";
+			display: block;
+			clear:both;
+		}*/
+
 	</style>
 </head>
 <body>
-	<!-- div.nav>ul>li*5>{menu$} -->
-	<div class="nav">
-		<ul class="clearfix">
-			<li>menu1</li>
-			<li>menu2</li>
-			<li>menu3</li>
-			<li>menu4</li>
-			<li>menu5</li>
-		</ul>
+	<div class="box clearfix">
+		<div class="box1">left</div>
+		<div class="box2">right</div>
+		<!-- <div class="clear"></div> -->
 	</div>
+	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia repellat ab soluta molestias praesentium adipisci blanditiis, culpa ad vero esse provident expedita recusandae ipsum, veritatis commodi, quaerat temporibus, rem rerum!
 </body>
-</html> 
+</html>

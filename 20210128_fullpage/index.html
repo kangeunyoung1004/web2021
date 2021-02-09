@@ -3,135 +3,152 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>scroll menu</title>
-  <link rel="stylesheet" href="../css/reset.css">
-  <script src="../js/jquery-3.1.1.min.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>fullpage</title>
+  <link rel="stylesheet" href="css/fullpage.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <script src="js/jquery-3.1.1.min.js"></script>
+  <script src="js/jquery.fullpage.js"></script>
   <style>
-    html,body{height: 100%;}
-    .scene{
-      width: 100%;height: 100%;
-      background-image: url(../images/pc01.jpg);
-      background-attachment: fixed;
+    nav#navTop{
+      position: fixed;background: #cdcdcd;
+      width: 100%;padding-left: 10px;z-index:1
+    }
+    nav#navTop li{float: left;}
+    nav#navTop li a{
+      display: block;line-height:50px;text-align: center;
+      padding: 0 10px;
+    }
+    nav#navTop li.active{background-color:#f00;}
+    nav#navTop li.active a{color:white}
+
+    .section{
       background-position: center;
       background-repeat: no-repeat;
+      -webkit-background-size: cover;
       background-size: cover;
-      position: relative;
     }
-    .scene.one{background-image: url(../images/pc01.jpg);}
-    .scene.two{background-image: url(../images/pc02.jpg);}
-    .scene.three{background-image: url(../images/pc03.jpg);}
+    .section.page1{background-image: url(images/bg1.jpg);}
+    .section.page2{background-image: url(images/bg2.jpg);}
+    .section.page3{background-image: url(images/bg3.jpg);}
+    .section.page4{background-image: url(images/bg4.jpg);text-align: center;}
 
-    .scene div{
-      width: 600px;position: absolute;
-      left: 50%;top: 50%;transform: translate(-50%,-50%);
-      color: white;
+    .main{
+      width: 400px;position: absolute;top:50%;
+      transform:translateY(-50%)
     }
-    .scene h1:after{
-      content: "";display:block;width: 100%;height: 1px;
-      background: white;margin: 10px 0;
+
+    .main.one,.main.three{
+      left:200px;
     }
-    .menu{
-      position: fixed;width: 100%;
-      background: skyblue;padding-left: 30px;
-      z-index: 1;
+
+    .main.two{
+      right:200px;
     }
-    .menu a{display: inline-block;line-height: 40px;width: 100px;text-align: center;}
-    .menu a.on,.menu a:hover{background: #f00;color: white;}
+
+    .main h3{font-size:3em}
+    .main p{margin-bottom: 20px;}
+    .main a{
+      display: block;text-align: center;width: 150px;
+      border: 1px solid #fff;line-height:40px;
+      border-radius:10px;color:white;transition:0.3s
+    }
+    .main a:hover{background-color: #fff;color:#000}
+
+    #onView2st{right:-400px;transition:0.3s}
+    #onView2st.move{right: 200px;}
+
+    #onView3st{left:-400px;transition:0.3s}
+    #onView3st.move{left: 200px;}
+
+    .scroll{
+      position: absolute;bottom: 20px;left: 50%;transform:translateX(-50%);
+      animation-name:xScroll;
+      animation-duration:0.8s;
+      animation-iteration-count:infinite;
+      animation-direction:alternate;
+    }
+    @keyframes xScroll {
+      from{bottom:20px}
+      to{bottom: 40px;}
+    }
+
   </style>
   <script>
     $(function(){
-      // 1st menu
-
-      // var oneTop = $("#v01s").offset().top;
-      // var twoTop = $("#v02s").offset().top;
-      // var threeTop = $("#v03s").offset().top;
-
-      // $("menu>a").eq(0).click(function(){
-      //  $("hmtl").animate({scrollTop:oneTop},300)
-      // });
-      // $("menu>a").eq(1).click(function(){
-      //  $("hmtl").animate({scrollTop:twoTop},300)
-      // });
-      // $("menu>a").eq(2).click(function(){
-      //  $("hmtl").animate({scrollTop:threeTop},300)
-      // });
+      $("#fullpage").fullpage({
+        menu:"#topMenu", //메뉴지정
+        anchors:["m1st","m2st","m3st","m4st"],
+        navigation:true,
+        afterLoad:function(anchorslink,index){
+          console.log(anchorslink+','+index);
 
 
-      //2st menu
-      // var menu = $(".menu>a");
-      // var section = $(".scene");
-
-      // menu.click(function(){
-      //  var i = $(this).index();
-      //  var st = section.eq(i).offset().top;
-      //  $("html").animate({scrollTop:st},300);
-      // });
-
-
-      // // 3st menu
-       $(".menu>a").click(function(){
-        var target = $(this.hash);
-      var st = target.offset().top;
-        $("html").animate({scrollTop:st},300);
-       });
-
-
-      //menu on
-
-      $(window).scroll(function(){
-        var scrollY = $(window).scrollTop();
-
-      //  if( scrollY >= $(".scene").eq(0).offset().top){
-      //    $(".menu>a").removeClass("on").eq(0).addClass("on");
-      //  }
-      //  if( scrollY >= $(".scene").eq(1).offset().top){
-      //    $(".menu>a").removeClass("on").eq(1).addClass("on");
-      //  }
-      //  if( scrollY >= $(".scene").eq(2).offset().top){
-      //    $(".menu>a").removeClass("on").eq(2).addClass("on");
-      //  }
-
-      //
-      //  for(var i=0;i<3;i++){
-      //    if(scrollY) >= $(".scene").eq(i).offset().top{
-      //      $(".menu>a").removeClass("on").eq(i).addClass("on");
-      //    }
-      //}
-
-        $(".scene").each(function(index){
-          if(scrollY >= $(this).offset().top){
-            $(".menu>a").removeClass("on").eq(index).addClass("on");
+          if(index == 2){
+            $("#onView2st").addClass("move");
+          }else{
+            $("#onView2st").removeClass("move")
           }
-        });
 
+          if(index == 3){
+            $("#onView3st").addClass("move");
+          }else{
+            $("#onView3st").removeClass("move")
+          }
+
+        }
       });
-
     });
   </script>
+
 </head>
 <body>
-  <nav class="menu">
-    <a href="#v01s" class="on">menu01</a>
-    <a href="#v02s">menu02</a>
-    <a href="#v03s">menu03</a>
+  <nav id="navTop">
+    <ul class="clearfix" id="topMenu">
+      <li data-menuanchor="m1st"><a href="#m1st">menu1</a></li>
+      <li data-menuanchor="m2st"><a href="#m2st">menu2</a></li>
+      <li data-menuanchor="m3st"><a href="#m3st">menu3</a></li>
+      <li data-menuanchor="m4st"><a href="#m4st">menu4</a></li>
+    </ul>
   </nav>
-  <section class="scene one" id="v01s">
-    <div>
-      <h1>Lorem ipsum dolor, sit amet.</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam veritatis ullam voluptas! Corporis quisquam quis commodi, molestiae facilis totam molestias.</p>
+  <div id="fullpage">
+    <!-- section 1st -->
+    <div class="section page1" data-anchor="m1st">
+      <div class="main one">
+        <h3>Lorem ipsum.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, eligendi.</p>
+        <a href="#">more</a>
+      </div>
+      <div class="scroll">
+        <a href="#m2st"><img src="images/btn_scroll.png" alt=""></a>
+      </div>
     </div>
-  </section>
-  <section class="scene two" id="v02s">
-    <div>
-      <h1>Lorem ipsum dolor, sit amet.</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam veritatis ullam voluptas! Corporis quisquam quis commodi, molestiae facilis totam molestias.</p>
+
+    <!-- section 2st -->
+    <div class="section page2" data-anchor="m2st">
+      <div class="main two" id="onView2st">
+        <h3>Lorem ipsum.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, eligendi.</p>
+        <a href="#">more</a>
+      </div>
     </div>
-  </section>
-  <section class="scene three" id="v03s">
-    <div>
-      <h1>Lorem ipsum dolor, sit amet.</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam veritatis ullam voluptas! Corporis quisquam quis commodi, molestiae facilis totam molestias.</p>
+
+    <!-- section 3st -->
+    <div class="section page3" data-anchor="m3st">
+      <div class="main three" id="onView3st">
+        <h3>Lorem ipsum.</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, eligendi.</p>
+        <a href="#">more</a>
+      </div>
     </div>
-  </section>
+
+    <!-- section 4st -->
+    <div class="section page4" data-anchor="m4st">
+      <div class="slide "><h1>Simple Demo</h1></div>
+	    <div class="slide"><h1>Only text</h1></div>
+	    <div class="slide"><h1>And text</h1></div>
+	    <div class="slide"><h1>And more text</h1></div>
+    </div>
+  </div>
 </body>
 </html>
