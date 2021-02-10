@@ -1,72 +1,28 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>aniview</title>
-	<link rel="stylesheet" href="../css/reset.css">
-	<style>
-	.box{width: 300px;height: 300px;
-		position: relative;
-		margin:0 auto;
-		background: skyblue;
-		overflow: hidden;
-		border:10px solid pink; cursor:pointer;transition:0.3s;}
-
-		.box .img{position: absolute;left:50%;top:50%;
-			transform:translate(-50%,-50%) scale(1.1);
-			transition:0.3s;}
-			.box:hover .img{transform:translate(-50%,-50%) scale(1.2)}
-		.box .plus{position: absolute;width:50px;height: 50px;left:50%;top: 50%;transform:translate(-50%,-50%);
-		transition:0.3s}
-	</style>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>anipos</title>
+  <style>
+    html,body{height: 100%;}
+    body{background-color: skyblue;
+    background-image: url(images/bg02.jpg);
+    background-repeat:no-repeat;
+    background-position:center;
+    background-size: ;}
+  </style>
+</head>
 <body>
-	<div class="box">
-		<img src="images/travel.jpg" class="img">
-		<div class="bg"></div>
-		<div class="wrap">
-			<div class="bar1"></div>
-			<div class="bar2"></div>
-		</div>
-	</div>
-
-	<div class="container gray">
-		<div class="contents">
-			<h2>gallery</h2>
-			<ul>
-				<li class="round">
-					<img src="../images/testimg.jpg" alt="">
-					<div class="bg">
-						<h3>여행</h3>
-					</div>
-				</li>
-				<li class="round">
-					<img src="../images/testimg.jpg" alt="">
-					<div class="bg">
-						<h3>여행</h3>
-					</div>
-				</li>
-				<li class="round">
-					<img src="../images/testimg.jpg" alt="">
-					<div class="bg">
-						<h3>여행</h3>
-					</div>
-				</li>
-				<li class="round">
-					<img src="../images/testimg.jpg" alt="">
-					<div class="bg">
-						<h3>여행</h3>
-					</div>
-				</li>
-				<li class="round">
-					<img src="../images/testimg.jpg" alt="">
-					<div class="bg">
-						<h3>여행</h3>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
+  <div class="wrap">
+    <img src="images/content2.png" alt="img01">
+    <form action="#" method="post">
+    <label for="search" class="searchTitle">search</label>
+    <input type="text" id="search" placeholder="검색어를 입력하세요" class="searchInp">
+    <input type="submit" value="button" class="searchBtn">
+    </form>
+  </div>
+  <img src="images/reallyAir.png" alt="" class="img00">
 </body>
 </html>
