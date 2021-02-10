@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/reset.css">
+  <style>
+    body{height: 100%;}
+    .vwrap{width:100%;height: 100%;background: pink;position: relative;}
+    .vwrap h3{position: absolute;top: 50%;text-align:center;}
+  #myvideo{
+    width: 100%;height: 100%; object-fit:cover;
+  }
+  </style>
+</head>
+<body>
+  <div class="vwrap">
+    <video id="myvideo"autoplay muted loop>
+      <source src="../images/sample01.mp4" type="video/mp4">
+    </video>
+  </div>
+</body>
+</html>

@@ -6,7 +6,19 @@
 	<title>aniview</title>
 	<link rel="stylesheet" href="../css/reset.css">
 	<style>
+	.box{width: 300px;height: 300px;
+		position: relative;
+		margin:0 auto;
+		background: skyblue;
+		overflow: hidden;
+		border:10px solid pink; cursor:pointer;transition:0.3s;}
 
+		.box .img{position: absolute;left:50%;top:50%;
+			transform:translate(-50%,-50%) scale(1.1);
+			transition:0.3s;}
+			.box:hover .img{transform:translate(-50%,-50%) scale(1.2)}
+		.box .plus{position: absolute;width:50px;height: 50px;left:50%;top: 50%;transform:translate(-50%,-50%);
+		transition:0.3s}
 	</style>
 
 <body>
