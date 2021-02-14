@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="../css/reset.css">
+	<title>Document</title>
+	<style>
+		.btnWrap{width: 200px;height: 40px;position: relative;background: pink;}
+		.btnWrap a{display: block;text-align: center;line-height: 40px;}
+		.btnWrap .bar1{position: absolute;width:0;height: 5px;background: blue;bottom:0;transition: 0.3s;}
+		.btnWrap:hover .bar1{width: 100%;}
+	</style>
+</head>
+<body>
+	<div class="btnWrap">
+		<a href="#">BUTTON</a>
+		<div class="bar1"></div>
+	</div>
+
+	<div class="btnWrapOne">
+		<a href="#">BUTTON</a>
+		<div class="bar"></div>
+	</div>
+
+	<div class="btnWrapTwo">
+		<div class="bar"></div>
+		<a href="#">BUTTON</a>
+	</div>
+</body>
+</html>
