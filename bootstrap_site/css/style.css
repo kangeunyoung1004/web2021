@@ -1,22 +1,23 @@
 @charset "UTF-8";
 
 :root{
-    --primary-color:#02b3e4;
-    --secondary-color:#ff5483;
-    --third-color:#a951ed;
+    --primary-color:#07168b;
+    --secondary-color:#ca0e74;
+    --third-color:#352978;
 }
-
+ 
 /* header */
 
 #headerWrap .bgcolor{
   position: absolute;
   width: 100%;height: 660px;
-  background:linear-gradient(160deg, #02ccba 0%,#aa7ecd 100%);
+  background:linear-gradient(160deg,#191340 0%,#258dee 100%);
   transform:skew(0deg,-15deg);
   left:0;top:-275px;z-index:-100
 }
 #headerWrap .video video{
-  object-fit:fill;width: 100%;border-radius:5px;
+  object-fit:fill;width: 100%;height:404.9px;
+  border-radius:5px;
   box-shadow: 10px 10px 25px rgb(46 61 73);
 }
 
@@ -28,8 +29,8 @@
 
 /* slider */
 .slider .row{position: relative;}
-.slider .slider-title{color:#7d97ad;font-size:15px}
-.slider .row h4{font-weight:normal;font-size:18px}
+.slider .slider-title{color:#192b85;font-size:25px}
+.slider .row h4{font-weight:normal;font-size:20px}
 
 .slider .swiper-button-next{
   height: 40px;position: absolute;right:0;
@@ -47,28 +48,15 @@
   position: absolute;top:0;left: 0;
 }
 .banner .row>div:nth-child(1) .mask{
-  background-color:rgba(2,179,228,0.6);
+  background-color:rgba(236,41,174,0.2);
 }
 .banner .row>div:nth-child(2) .mask{
-  background-color:rgba(2,240,186,0.6);
+  background-color:rgba(2,240,186,0.2);
 }
 .banner .row>div:nth-child(3) .mask{
-  background-color:rgba(169,81,237,0.6);
-}
-.banner .row>div:nth-child(4) .mask{
-  background-color:rgba(125,151,173,0.6);
-}
-.banner .row>div:nth-child(5) .mask{
-  background-color:rgba(255,162,52,0.6);
-}
-.banner .row>div:nth-child(6) .mask{
-  background-color:rgba(255,84,131,0.6);
+  background-color:rgba(25,114,133,0.2);
 }
 
-.banner .card-img .view-new{
-  position: absolute;left: 10px;top: 10px;border-radius: 3px;
-  background: #fff;padding:3px 10px;
-}
 
 .banner .card{
   overflow: hidden;border:0 none;
@@ -101,7 +89,7 @@
 /* CONTACT */
 
 .contact{
-  background:url(../images/contact-cover.jpg) no-repeat center;
+  background:url(../images/product07.png) no-repeat center;
   background-size:cover;
 }
 
